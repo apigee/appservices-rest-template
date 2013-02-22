@@ -7,10 +7,8 @@
 # - Keep the APPNAME as “sandbox”: it’s a context we automatically created for you.
 #   It’s completely open by default, but don’t worry, other apps you create are not!
 
-ORGNAME="usergrid"
-APPNAME="tests"
-#ORGNAME="YOUR APIGEE.COM USERNAME"
-#APPNAME="sandbox"
+ORGNAME="YOUR APIGEE.COM USERNAME"
+APPNAME="sandbox"
 
 
 # 2. Set some details for your first object
@@ -25,7 +23,7 @@ TYPE="books"
 
 output=$(curl 	-s \
 				-X POST \
-				-d '{"title":"the old man and the sea"}' \
+				-d '{ "title" : "the old man and the sea" }' \
 				"https://api.usergrid.com/$ORGNAME/$APPNAME/$TYPE")
 
 
