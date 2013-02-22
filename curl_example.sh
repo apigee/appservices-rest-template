@@ -21,10 +21,10 @@ APPNAME="sandbox"
 
 TYPE="books"
 
-output=$(curl 	-s \
-				-X POST \
-				-d '{ "title" : "the old man and the sea" }' \
-				"https://api.usergrid.com/$ORGNAME/$APPNAME/$TYPE")
+output=$(curl   -s \
+                -X POST \
+                -d '{ "title" : "the old man and the sea" }' \
+                "https://api.usergrid.com/$ORGNAME/$APPNAME/$TYPE")
 
 
 # 3. Now, run it!
@@ -34,12 +34,12 @@ output=$(curl 	-s \
 # You may need to execute the following command to be able to run the script: chmod u+x curl_example.sh
 
 if [ "$output" == "" ]; then
-	echo -e '\nCould not create the book. Did you enter your ORGNAME (username) correctly on line 9 of curl_example.sh?'
+    echo -e '\nCould not create the book. Did you enter your ORGNAME (username) correctly on line 9 of curl_example.sh?'
 else
-	echo -e '\nSuccess! Here is the the object we stored; notice the timestamps and unique id we created for you:\n'
-	echo $output
-	echo -e '\nThe curl command we used to create this oject was:'
-	echo -e "curl -X POST -d '<JSON object you want to store>' https://api.usergrid.com/$ORGNAME/$APPNAME/$TYPE\n" 
+    echo -e '\nSuccess! Here is the the object we stored; notice the timestamps and unique id we created for you:\n'
+    echo $output
+    echo -e '\nThe curl command we used to create this oject was:'
+    echo -e "curl -X POST -d '<JSON object you want to store>' https://api.usergrid.com/$ORGNAME/$APPNAME/$TYPE\n" 
 fi
 
 
